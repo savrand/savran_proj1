@@ -54,8 +54,9 @@ class PicturesController < ApplicationController
   end
 
   def tag
-   a=params[:id]
-   @pictures=Picture.where(id: Tagging.find_all_by_tag_id(a).map{|u| u.picture_id})
+   #a=params[:id]
+   #@pictures=Picture.where(id: Tagging.find_all_by_tag_id(a).map{|u| u.picture_id})
+   @pictures=Tag.find_by_id(params[:id]).picture
   end
   
   def abc
