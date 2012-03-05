@@ -4,6 +4,7 @@ class Picture < ActiveRecord::Base
  attr_accessible :name, :picture, :category_id
 
  has_many :tagging
+ has_many :tag, :through => :tagging
  
  belongs_to :category
  belongs_to :album
