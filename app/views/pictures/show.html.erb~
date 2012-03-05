@@ -1,0 +1,15 @@
+все таги 
+<%@picture_tags.each do |picture_tags|%>
+<%=picture_tags.tag.name%>
+<%end%>
+<%= @picture.name%></br>
+<%= image_tag @picture.picture.url(:thumb) %></br>
+<%=link_to "оригинальный размер", abc_picture_path(@picture)%></br>
+<a href="http://localhost:3000/pictures/allpict">Все Изображения</a></br>
+Добавить таги
+<%= form_tag(addtags_picture_path) do %>
+<%= text_field_tag :tag %>
+<%= text_field_tag :id, @picture.id%>
+<%= submit_tag "Сохранить" %>
+<% end %>
+

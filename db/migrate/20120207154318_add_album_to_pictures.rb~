@@ -1,0 +1,4 @@
+class AddAlbumToPictures < ActiveRecord::Migration
+  def change
+  end
+end

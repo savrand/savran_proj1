@@ -1,0 +1,14 @@
+<table width="100%" >
+ 
+ <%i=0%>
+ <% @pictures.each do |picture| %>
+    <%if i<6%>
+     <td><%=picture.name%><%= link_to ">>", picture %></br><%i=i+1%>
+       <%= image_tag picture.picture.url(:thumb)%></td>
+   <%else%>
+   <tr></tr><td><%= link_to picture.name, picture %></br>
+       <%= image_tag picture.picture.url(:thumb)%></td><%i=1%>
+   <%end%>
+   <% end %>
+</table>
+

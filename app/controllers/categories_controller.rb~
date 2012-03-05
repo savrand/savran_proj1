@@ -1,0 +1,14 @@
+class CategoriesController < ApplicationController
+  def new
+  end
+   
+  def show
+  end
+
+  def update
+  @category=Category.find(params[:category_id])
+  @pictures=@category.pictures
+  redirect_to '/pictures/allpict'
+  end
+
+end

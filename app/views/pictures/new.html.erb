@@ -1,0 +1,12 @@
+<h2>Загрузка картинки</h2>
+<%= form_for @picture,
+             :html => { :multipart => true } do |form| %>
+    <%= form.label :Название %><br />
+    <%= form.text_field :name %></br>
+    <%=form.file_field :picture, :multiple => true %> 
+
+<%=form.select :category_id, "<option value="">Выбор категории</option>".html_safe + options_from_collection_for_select(Category.all, :id, :name)%></br>   
+  <%= form.submit "Загрузить" %>
+<% end %>
+Все изображения<a href="http://localhost:3000/pictures/allpict">>></a></br>
+

@@ -1,0 +1,24 @@
+Все изображения<a href="http://localhost:3000/pictures/allpict">>></a></br>
+<%Category.all.each do |category|%>
+<%=category.name%><%=link_to ">>",allpict_picture_path(category) %></br>
+<%end%>
+<%@tagall.each do |tag|%>
+<%=link_to tag.name,{ :action => :tag, :id => tag.name }%>
+<%end%>
+<%=will_paginate%>
+ <table width="100%" >
+ 
+ <%i=0%>
+ <% @pictures.each do |picture| %>
+    <%if i<6%>
+     <td><%=picture.name%><%= link_to ">>", picture %></br><%i=i+1%>
+       <%= image_tag picture.picture.url(:thumb)%></td>
+   <%else%>
+   <tr></tr><td><%= link_to picture.name, picture %></br>
+       <%= image_tag picture.picture.url(:thumb)%></td><%i=1%>
+   <%end%>
+   <% end %>
+</table>
+
+
+

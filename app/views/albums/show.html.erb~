@@ -1,0 +1,5 @@
+111
+<% @pictures.each do |pictures| %>
+      <%= image_tag pictures.picture.url(:thumb) %></br>
+      <hr>
+  <% end %>
